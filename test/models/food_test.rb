@@ -45,4 +45,19 @@ class FoodTest < ActiveSupport::TestCase
       assert_instance_of String, @intance_of_food.open_yelp_url
     end
   end
+
+  # describe "invalid Food" do
+  #   before do
+  #     @invalid_intance_of_food = Food.find_in_api("melissa-jimison")
+  #   end
+  #
+  #   it "knows its display_phone", :vcr do
+  #     assert_equal "+1-206-523-4569", @invalid_intance_of_food.display_phone
+  #     assert_instance_of String, @invalid_intance_of_food.display_phone
+  #   end
+  #
+  #   it "knows that it has an open in Yelp url", :vcr do
+  #     assert_instance_of String, @invalid_intance_of_food.open_yelp_url
+  #   end
+  # end
 end

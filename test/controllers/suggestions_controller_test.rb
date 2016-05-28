@@ -1,11 +1,11 @@
 require 'test_helper'
 
 class SuggestionsControllerTest < ActionController::TestCase
-  # test "should get index" do
-  #   get :index
-  #   assert_response :success
-  # end
-  #
+  test "should get index" do
+    get(:index, { 'uid' => 'americandreamers' })
+    assert_not_nil
+  end
+
   # test "should get favorite" do
   #   post :favorite
   #   assert_response :success

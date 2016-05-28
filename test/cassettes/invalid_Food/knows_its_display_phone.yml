@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.yelp.com/v2/business/melissa-jimison
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - OAuth oauth_consumer_key="_R_trNFDzsAcX3LXtO1Kzw", oauth_nonce="16c6ab7cc6d242be93c234f2eee6a705",
+        oauth_signature="3Kud4HcDEqXOIX1CnzScGUIbvLs%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1463975213", oauth_token="g6Y2ohxxC7p1bt58iY_a7i8ojXlKZaVd",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Mon, 23 May 2016 03:46:53 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '88'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d1f8db56087c56ad75a905831e38b446c1463975213; expires=Tue, 23-May-17
+        03:46:53 GMT; path=/; domain=.yelp.com; HttpOnly
+      - bse=ea08a286578b8b0c1fdb7c8e988463ec; Domain=.yelp.com; Path=/; HttpOnly
+      - yuv=Htf96y8TiTHcv1SNi6rZgxMyOC1mzng7t85emmCqTgTcV_IuFJ6vVKDDTULQqUmfUG9xfiDM1GifuF669K30QC7lu5jzoicy;
+        Domain=.yelp.com; Max-Age=630720000; Path=/; expires=Sun, 18-May-2036 03:46:53
+        GMT
+      X-Node:
+      - 10-64-147-196-uswest1bprod
+      - api_com
+      Cache-Control:
+      - max-age=0, must-revalidate, no-cache, no-store, private
+      Expires:
+      - Mon, 23 May 2016 03:46:53 GMT
+      Pragma:
+      - no-cache
+      Vary:
+      - User-Agent
+      X-Mode:
+      - ro
+      X-Proxied:
+      - 10-64-16-56-uswest1bprod
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 2a7585fe8abb2a1f-SEA
+    body:
+      encoding: UTF-8
+      string: '{"error": {"text": "Business information is unavailable", "id": "BUSINESS_UNAVAILABLE"}}'
+    http_version: 
+  recorded_at: Mon, 23 May 2016 03:46:53 GMT
+recorded_with: VCR 3.0.1
