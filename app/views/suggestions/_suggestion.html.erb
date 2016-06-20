@@ -1,42 +1,37 @@
 <% if @zip %>
-<% @zip.map do |pair|%>
-      <table class="table">
-        <tr>
-          <td class="music">
+  <% @zip.map do |pair|%>
+    <table class="table">
+      <tr>
+        <td class="music">
           <%= link_to pair[0].open_spotify_url, target: :_blank do %>
-          <%= image_tag pair[0].image, size: '100X100', alt: "Profile Photo", class: "spotifypic" %>
-          <div class='spotifytitle'>
-
-          <h3><%= pair[0].name %></h3>
-          <strong>Type : </strong><%= pair[0].type.capitalize %>
+            <%= image_tag pair[0].image, size: '100X100', alt: "Profile Photo", class: "spotifypic" %>
+            <div class="spotifyheaderti">
+              <h3><%= pair[0].name %></h3>
+              <strong>Type : </strong><%= pair[0].type.capitalize %>
+            </div>
           <% end %>
+          <div class="iframe-frame">
+            <iframe src="https://embed.spotify.com/?uri=<%= pair[0].uri %>&theme=white" frameborder="0" allowtransparency="true"></iframe>
           </div>
-          <br>
-
-          <br>
-
-          <br>
-          <iframe src="https://embed.spotify.com/?uri=<%= pair[0].uri %>&theme=white" frameborder="0" allowtransparency="true"></iframe>
           <%= button_to "Open in Spotify", pair[0].open_spotify_url, method: :get, class: "btn btn-success"  %>
+        </td>
 
-          </td>
-
-          <%if current_user%>
+        <%if current_user%>
           <td class="fava">
-          <%= form_tag add_favorite_path, method: :post do %>
-          <%=hidden_field_tag :current_user_id, current_user.uid%>
-          <%=hidden_field_tag :suggestion_id, pair[2]%>
-          <%=submit_tag 'Favorite!', class: "btn btn-primary"%>
-          <%end%>
-          <br>
+            <%= form_tag add_favorite_path, method: :post do %>
+              <%=hidden_field_tag :current_user_id, current_user.uid%>
+              <%=hidden_field_tag :suggestion_id, pair[2]%>
+              <%=submit_tag 'Favorite!', class: "btn btn-primary"%>
+            <%end%>
+              <br>
 
-          <%= form_tag unfavorite_path, method: :delete do %>
-          <%=hidden_field_tag :current_user_id, current_user.uid%>
-          <%=hidden_field_tag :suggestion_id, pair[2]%>
-          <%=submit_tag 'Unfavorite!', class: "btn btn-primary"%>
-          <%end%>
+            <%= form_tag unfavorite_path, method: :delete do %>
+              <%=hidden_field_tag :current_user_id, current_user.uid%>
+              <%=hidden_field_tag :suggestion_id, pair[2]%>
+              <%=submit_tag 'Unfavorite!', class: "btn btn-primary"%>
+            <%end%>
           </td>
-          <%end%>
+        <%end%>
 
 
           <td class="food">
@@ -72,6 +67,7 @@
           <strong>Categories : </strong><% pair[1].categories.map do |cat| %>
             <%= cat[0] + ". " %>
           <%end %>
+          <br><br>
           <%= button_to "Open in Yelp", pair[1].open_yelp_url, method: :get, class: "btn btn-danger"  %>
           </td>
 
