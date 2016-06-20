@@ -53,11 +53,13 @@
               <%=image_tag current_user.images, class: "picprofile" %>
             <% end %>
           <%end%>
-
-            <li><%=link_to "Login With Spotify", "/auth/spotify" unless current_user%>   </li>
-
-          </div>
         </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><%=link_to "Login With Spotify", "/auth/spotify" unless current_user%>   </li>
+
+        </ul>
+      </div>
     </div><!-- /.container-fluid -->
   </nav>
 
